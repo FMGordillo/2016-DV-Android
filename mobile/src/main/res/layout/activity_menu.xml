@@ -11,6 +11,7 @@
     tools:context="com.example.fmgordillo.clases.Menu">
 
     <TabHost
+        android:id="@android:id/tabhost"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -35,6 +36,11 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
+                    <Button
+                        android:id="@+id/menu_changeColor_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_changeColor_btn" />
                 </LinearLayout>
 
                 <LinearLayout

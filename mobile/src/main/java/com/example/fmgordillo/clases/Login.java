@@ -31,6 +31,7 @@ public class Login extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                /* METODO NORMAL
                 if (userTxt.getText().toString().equals("") // *** IF IS EMPTY
                         || pwTxt.getText().toString().equals("")) {
                     Toast.makeText(Login.this,
@@ -42,7 +43,10 @@ public class Login extends AppCompatActivity {
                     Toast.makeText(Login.this,
                             "Datos incorrectos. Vuelva a intentarlo.", Toast.LENGTH_SHORT).show();
                 }
+                */
+                startActivity(new Intent(Login.this, Menu.class));
             }
+
         });
     }
 }

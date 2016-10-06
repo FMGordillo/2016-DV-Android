@@ -4,4 +4,6 @@
     <string name="login_btn_accept">Login</string>
     <string name="login_field_user">Nombre de usuario</string>
     <string name="login_field_pw">Contraseña</string>
+    <!-- TAB 1 -->
+    <string name="menu_changeColor_btn">Cambiar color</string>
 </resources>
