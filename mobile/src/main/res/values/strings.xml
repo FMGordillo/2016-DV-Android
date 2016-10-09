@@ -1,13 +1,16 @@
 <resources>
     <string name="app_name">Clases</string>
     <string name="back">Volver</string>
+    <!-- SPLASH SCREEN -->
+    <string name="splash_txt_1">Bienvenidos a mi app</string>
     <!-- LOGIN -->
     <string name="login_btn_accept">Login</string>
     <string name="login_field_user">Nombre de usuario</string>
     <string name="login_field_pw">Contraseña</string>
     <!-- MENU - TAB 1 -->
-    <string name="menu_btn_changecolor">Cambiar color</string>
+    <string name="menu_changeColor_btn">Cambiar color</string>
     <!-- TAB 1 -->
     <string name="tabs_1_color_btn_changecolor">Haceme clic y cambio el fondo</string>
+
 
 </resources>

@@ -26,7 +26,7 @@ public class Menu extends AppCompatActivity {
         tabs.setup();
 
         // *** TAB 1
-        TabHost.TabSpec spec = tabs.newTabSpec("MiTab1");
+        TabHost.TabSpec spec = tabs.newTabSpec("Color");
         spec.setContent(R.id.tab1);
         spec.setIndicator("TAB1");
         tabs.addTab(spec);
@@ -39,13 +39,13 @@ public class Menu extends AppCompatActivity {
         });
 
         // *** TAB 2
-        spec = tabs.newTabSpec("MiTab2");
+        spec = tabs.newTabSpec("ABM");
         spec.setContent(R.id.tab2);
         spec.setIndicator("TAB2");
         tabs.addTab(spec);
 
         // *** TAB 3
-        spec = tabs.newTabSpec("UnaTabMas");
+        spec = tabs.newTabSpec("About me");
         spec.setContent(R.id.tab3);
         spec.setIndicator("TAB1");
         tabs.addTab(spec);

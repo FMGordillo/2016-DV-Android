@@ -3,17 +3,32 @@
     android:id="@+id/tabs_1_color_view"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:weightSum="4">
 
-    <Button
-        android:id="@+id/tabs_1_color_btn_cambiar"
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/tabs_1_color_btn_changecolor" />
+        android:layout_height="match_parent"
+        android:layout_weight="2">
 
-    <Button
-        android:id="@+id/tabs_1_color_btn_volver"
+        <Button
+            android:id="@+id/tabs_1_color_btn_cambiar"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_gravity="bottom"
+            android:text="@string/tabs_1_color_btn_changecolor" />
+    </TableRow>
+
+    <TableRow
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/back" />
+        android:layout_height="match_parent"
+        android:layout_weight="2">
+
+        <Button
+            android:id="@+id/tabs_1_color_btn_volver"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/back" />
+    </TableRow>
+
 </LinearLayout>
