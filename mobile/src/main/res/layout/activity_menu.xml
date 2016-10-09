@@ -40,7 +40,7 @@
                         android:id="@+id/menu_changeColor_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="@string/menu_changeColor_btn" />
+                        android:text="@string/menu_btn_changecolor" />
                 </LinearLayout>
 
                 <LinearLayout

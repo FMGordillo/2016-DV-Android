@@ -16,6 +16,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".Menu"></activity>
+        <activity android:name=".Tabs1"></activity>
     </application>
 
 </manifest>
