@@ -18,6 +18,7 @@
         <activity android:name=".Login" />
         <activity android:name=".Menu" />
         <activity android:name=".ABM" />
+        <activity android:name=".AboutMe"></activity>
     </application>
 
 </manifest>
