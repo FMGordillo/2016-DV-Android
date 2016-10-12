@@ -1,17 +1,17 @@
 package com.example.fmgordillo.clases;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TabHost;
 
-public class Menu extends AppCompatActivity {
+public class Menu extends Activity {
 
     TabHost tabs;
-    Button change;
+    Button change, stayIdle;
     Button ABMbtn;
     boolean a = false;
 
@@ -23,6 +23,7 @@ public class Menu extends AppCompatActivity {
         //Inicializacion
 
         change = (Button) findViewById(R.id.menu_changeColor_btn);
+        stayIdle = (Button) findViewById(R.id.menu_changeColorDefault_btn);
         tabs = (TabHost) findViewById(android.R.id.tabhost);
         ABMbtn = (Button) findViewById(R.id.tabs_3_alta_btn);
         tabs.setup();
@@ -42,6 +43,14 @@ public class Menu extends AppCompatActivity {
                     tabs.getCurrentView().setBackgroundColor(Color.BLUE);
                 }
                 a = !a;
+            }
+        });
+
+        stayIdle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                tabs.getCurrentView().setBackgroundColor(Color.TRANSPARENT);
+
             }
         });
 

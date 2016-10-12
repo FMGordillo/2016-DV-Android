@@ -105,6 +105,7 @@
                     android:id="@+id/tabs_2_abm_list"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:hint="@string/tabs_2_abm_rowsHint"
                     android:text="" />
             </TableRow>
 

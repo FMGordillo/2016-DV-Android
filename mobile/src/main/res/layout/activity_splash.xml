@@ -15,7 +15,8 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:weightSum="5">
+        android:weightSum="5"
+        tools:ignore="UselessParent">
 
         <TableRow
             android:layout_width="match_parent"
@@ -43,7 +44,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                app:srcCompat="@drawable/alf" />
+                android:contentDescription=""
+                app:srcCompat="@drawable/alf"
+                tools:ignore="ContentDescription" />
         </TableRow>
     </LinearLayout>
 

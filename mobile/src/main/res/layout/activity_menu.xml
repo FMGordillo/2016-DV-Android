@@ -42,6 +42,12 @@
                         android:layout_width="match_parent"
                         android:layout_height="80dp"
                         android:text="@string/menu_changeColor_btn" />
+
+                    <Button
+                        android:id="@+id/menu_changeColorDefault_btn"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/menu_changeColorDefault" />
                 </LinearLayout>
 
                 <LinearLayout

@@ -1,11 +1,11 @@
 package com.example.fmgordillo.clases;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
 
-public class AboutMe extends AppCompatActivity {
+public class AboutMe extends Activity {
 
     SharedPreferences prefs;
     SharedPreferences.Editor editor;

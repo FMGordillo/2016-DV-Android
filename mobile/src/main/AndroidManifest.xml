@@ -7,7 +7,7 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@android:style/Theme.Holo">
         <activity android:name=".Splash">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -17,8 +17,14 @@
         </activity>
         <activity android:name=".Login" />
         <activity android:name=".Menu" />
-        <activity android:name=".ABM" />
-        <activity android:name=".AboutMe"></activity>
+        <activity
+            android:name=".ABM"
+            android:parentActivityName="com.example.fmgordillo.clases.Menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fmgordillo.clases.Menu" />
+        </activity>
+        <activity android:name=".AboutMe" />
     </application>
 
 </manifest>

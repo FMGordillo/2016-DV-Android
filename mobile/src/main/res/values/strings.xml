@@ -11,6 +11,7 @@
     <string name="menu_changeColor_btn">Cambiar color</string>
     <!-- TAB 1 -->
     <string name="tabs_1_color_btn_changecolor">Haceme clic y cambio el fondo</string>
+    <string name="menu_changeColorDefault">Reset</string>
     <!-- TAB 2 -->
     <string name="tabs_2_abm_insert_details">Ingrese el codigo y nombre del nuevo usuario, y haga clic en el boton</string>
     <string name="tabs_2_abm_insert_btn">Insertar</string>
@@ -23,6 +24,7 @@
     <string name="onInsert">insertado exitosamente</string>
     <string name="onUpdate">actualizado exitosamente</string>
     <string name="onDelete">eliminado exitosamente</string>
+    <string name="tabs_2_abm_rowsHint">Datos vacios</string>
 
 
 </resources>

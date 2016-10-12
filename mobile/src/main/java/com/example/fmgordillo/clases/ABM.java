@@ -1,11 +1,14 @@
 package com.example.fmgordillo.clases;
 
+import android.app.ActionBar;
+import android.app.Activity;
 import android.content.ContentValues;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.NavUtils;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -14,10 +17,11 @@ import android.widget.Toast;
 
 import com.example.fmgordillo.clases.resources.DBErrors;
 
-public class ABM extends AppCompatActivity {
+public class ABM extends Activity {
 
     SQLiteDatabase db;
     ABM_DB usdbh;
+    ActionBar actionBar;
     Cursor c;
     EditText code, name;
     TextView lista;
@@ -35,8 +39,7 @@ public class ABM extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs_abm);
-        usdbh = new ABM_DB(this, "DBUsuarios", null, 1);
-        db = usdbh.getWritableDatabase();
+        getActionBar().setDisplayHomeAsUpEnabled(true);
 
         //Initialization ¡¡NO BORRAR!!
         inicializar();
@@ -64,7 +67,7 @@ public class ABM extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String codeTxt = code.getText().toString();
-                if (codeTxt.isEmpty() || !(codeTxt.equals(Integer.class)) || codeTxt.equals("")) {
+                if (codeTxt.isEmpty() || codeTxt.equals("")) {
                     check(100L, onInsertTxt);
                 } else {
                     nuevoRegistro.put("nombre", name.getText().toString());
@@ -80,12 +83,30 @@ public class ABM extends AppCompatActivity {
         deleteBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                result = db.delete("Usuarios",
-                        "codigo=".concat(code.getText().toString()), null);
-                check(0L, onDeleteTxt);
+                String codeTxt = code.getText().toString();
+                if (codeTxt.isEmpty() || codeTxt.equals("")) {
+                    check(100L, onInsertTxt);
+                } else {
+                    result = db.delete("Usuarios",
+                            "codigo=".concat(code.getText().toString()), null);
+                    check(0L, onDeleteTxt);
+                }
                 startActivity(new Intent(ABM.this, ABM.class));
             }
         });
+    }
+
+    // BACK TO HOME Button
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            // Respond to the action bar's Up/Home button
+            case android.R.id.home:
+                NavUtils.navigateUpFromSameTask(this);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 
     // FIXME Fix the handling of errors in SQLite
@@ -109,6 +130,9 @@ public class ABM extends AppCompatActivity {
 
         nuevoRegistro = new ContentValues();
         lista = (TextView) findViewById(R.id.tabs_2_abm_list);
+
+        usdbh = new ABM_DB(this, "DBUsuarios", null, 1);
+        db = usdbh.getWritableDatabase();
 
         campos = new String[]{"codigo", "nombre"};
         c = db.query("Usuarios", campos, null, null, null, null, null);
