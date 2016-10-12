@@ -6,7 +6,8 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 class ABM_DB extends SQLiteOpenHelper {
 
-    private String sqlCreate = "CREATE TABLE Usuarios (codigo INTEGER, nombre TEXT)";
+    private String sqlCreate = "CREATE TABLE Usuarios (codigo INTEGER NOT NULL, nombre TEXT)";
+    private String sqlDelete = "DROP TABLE IF EXISTS Usuarios";
 
     ABM_DB(Context contexto, String nombre,
            SQLiteDatabase.CursorFactory factory, int version) {
@@ -20,7 +21,8 @@ class ABM_DB extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
-        db.execSQL("DROP TABLE IF EXISTS Usuarios");
+        db.execSQL(sqlDelete);
         db.execSQL(sqlCreate);
     }
+
 }

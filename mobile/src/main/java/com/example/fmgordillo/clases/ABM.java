@@ -17,10 +17,11 @@ import com.example.fmgordillo.clases.resources.DBErrors;
 public class ABM extends AppCompatActivity {
 
     SQLiteDatabase db;
+    ABM_DB usdbh;
     Cursor c;
     EditText code, name;
     TextView lista;
-    Button insertBtn, deleteBtn, updateBtn, debugDROPBtn; // Alta | Baja | Modificacion | Consulta
+    Button insertBtn, deleteBtn, updateBtn; // Alta | Baja | Modificacion | Consulta
     String onInsertTxt, onUpdateTxt, onDeleteTxt,
             notificacionOK, notificacionErr,
             codeCursor, nameCursor;
@@ -34,9 +35,7 @@ public class ABM extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tabs_abm);
-        ABM_DB usdbh =
-                new ABM_DB(this, "DBUsuarios", null, 1);
-
+        usdbh = new ABM_DB(this, "DBUsuarios", null, 1);
         db = usdbh.getWritableDatabase();
 
         //Initialization ¡¡NO BORRAR!!
@@ -47,16 +46,15 @@ public class ABM extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 String codeTxt = code.getText().toString();
-
-                if (codeTxt.equals("")) {
-                    check(100, onInsertTxt);
+                if (codeTxt.isEmpty() || codeTxt.equals("")) {
+                    check(100L, onInsertTxt);
+                    System.out.println(result);
                 } else {
-
+                    nuevoRegistro.put("codigo", code.getText().toString());
+                    nuevoRegistro.put("nombre", name.getText().toString());
+                    result = db.insert("Usuarios", null, nuevoRegistro);
+                    check(0L, onInsertTxt);
                 }
-                nuevoRegistro.put("codigo", code.getText().toString());
-                nuevoRegistro.put("nombre", name.getText().toString());
-                result = db.insert("Usuarios", null, nuevoRegistro);
-                check(result, onInsertTxt);
                 startActivity(new Intent(ABM.this, ABM.class));
             }
         });
@@ -65,10 +63,15 @@ public class ABM extends AppCompatActivity {
         updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                nuevoRegistro.put("nombre", name.getText().toString());
-                result = db.update("Usuarios", nuevoRegistro,
-                        "codigo=".concat(code.getText().toString()), null);
-                check(result, onUpdateTxt);
+                String codeTxt = code.getText().toString();
+                if (codeTxt.isEmpty() || !(codeTxt.equals(Integer.class)) || codeTxt.equals("")) {
+                    check(100L, onInsertTxt);
+                } else {
+                    nuevoRegistro.put("nombre", name.getText().toString());
+                    result = db.update("Usuarios", nuevoRegistro,
+                            "codigo=".concat(code.getText().toString()), null);
+                    check(0L, onUpdateTxt);
+                }
                 startActivity(new Intent(ABM.this, ABM.class));
             }
         });
@@ -79,15 +82,15 @@ public class ABM extends AppCompatActivity {
             public void onClick(View v) {
                 result = db.delete("Usuarios",
                         "codigo=".concat(code.getText().toString()), null);
-                check(result, onDeleteTxt);
+                check(0L, onDeleteTxt);
                 startActivity(new Intent(ABM.this, ABM.class));
             }
         });
-
     }
 
-    private void check(long result, String resultado) {
-        if (result != 0) {
+    // FIXME Fix the handling of errors in SQLite
+    private void check(Long result, String resultado) {
+        if (result == 0L) {
             Toast.makeText(ABM.this,
                     notificacionOK + " " + resultado,
                     Toast.LENGTH_SHORT).show();

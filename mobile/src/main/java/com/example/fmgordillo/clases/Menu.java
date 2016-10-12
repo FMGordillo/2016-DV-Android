@@ -1,6 +1,7 @@
 package com.example.fmgordillo.clases;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -12,6 +13,7 @@ public class Menu extends AppCompatActivity {
     TabHost tabs;
     Button change;
     Button ABMbtn;
+    boolean a = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,13 +30,18 @@ public class Menu extends AppCompatActivity {
         // *** TAB 1
         TabHost.TabSpec spec = tabs.newTabSpec("Color");
         spec.setContent(R.id.tab1);
-        spec.setIndicator("TAB1");
+        spec.setIndicator("Cambiar Color");
         tabs.addTab(spec);
 
         change.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Menu.this, Tabs1.class));
+                if (a) {
+                    tabs.getCurrentView().setBackgroundColor(Color.RED);
+                } else {
+                    tabs.getCurrentView().setBackgroundColor(Color.BLUE);
+                }
+                a = !a;
             }
         });
 
@@ -45,7 +52,7 @@ public class Menu extends AppCompatActivity {
         tabs.addTab(spec);
 
         // *** TAB 3
-        spec = tabs.newTabSpec("ABM");
+        spec = tabs.newTabSpec("About me");
         spec.setContent(R.id.tab3);
         spec.setIndicator("TAB3");
         tabs.addTab(spec);
