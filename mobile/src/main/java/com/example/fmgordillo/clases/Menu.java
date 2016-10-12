@@ -1,7 +1,6 @@
 package com.example.fmgordillo.clases;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -10,19 +9,20 @@ import android.widget.TabHost;
 
 public class Menu extends AppCompatActivity {
 
-    Resources res;
     TabHost tabs;
     Button change;
+    Button ABMbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_menu);
 
-        res = getResources();
+        //Inicializacion
 
         change = (Button) findViewById(R.id.menu_changeColor_btn);
         tabs = (TabHost) findViewById(android.R.id.tabhost);
+        ABMbtn = (Button) findViewById(R.id.tabs_3_alta_btn);
         tabs.setup();
 
         // *** TAB 1
@@ -45,10 +45,16 @@ public class Menu extends AppCompatActivity {
         tabs.addTab(spec);
 
         // *** TAB 3
-        spec = tabs.newTabSpec("About me");
+        spec = tabs.newTabSpec("ABM");
         spec.setContent(R.id.tab3);
-        spec.setIndicator("TAB1");
+        spec.setIndicator("TAB3");
         tabs.addTab(spec);
+        ABMbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(Menu.this, ABM.class));
+            }
+        });
 
         tabs.setCurrentTab(0);
 
