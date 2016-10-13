@@ -10,6 +10,8 @@
     <!-- MENU - TAB 1 -->
     <string name="menu_changeColor_btn">Cambiar color</string>
     <string name="menu_sharedPreferences_btn">Preferencias compartidas</string>
+    <string name="menu_settings_btn">Settings</string>
+    <string name="tabs_2_abm">ABMC de Usuarios</string>
     <!-- TAB 1 -->
     <string name="tabs_1_color_btn_changecolor">Haceme clic y cambio el fondo</string>
     <string name="menu_changeColorDefault">Reset</string>

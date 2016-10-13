@@ -60,7 +60,7 @@
                         android:id="@+id/tabs_3_alta_btn"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Button" />
+                        android:text="@string/tabs_2_abm" />
 
                 </LinearLayout>
 
@@ -70,11 +70,10 @@
                     android:layout_height="match_parent"
                     android:orientation="vertical">
 
-                    <Button
-                        android:id="@+id/menu_changeSettings_btn"
+                    <TextView
+                        android:id="@+id/aboutme_description"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Button" />
+                        android:layout_height="wrap_content" />
                 </LinearLayout>
             </FrameLayout>
         </LinearLayout>
