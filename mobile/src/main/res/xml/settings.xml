@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+    <PreferenceCategory android:title="Idioma">
+        <ListPreference
+            android:dialogTitle="Indicar idioma"
+            android:entries="@array/language"
+            android:entryValues="@array/languagecode"
+            android:key="settings1"
+            android:summary="Cambiar el idioma"
+            android:title="Idioma" />
+    </PreferenceCategory>
+    <PreferenceCategory android:title="Danos tu opinion">
+        <CheckBoxPreference
+            android:key="setting2"
+            android:summary="Demostrá tu amor (u odio) de manera anónima"
+            android:title="¿Te gusta la app?" />
+        <EditTextPreference
+            android:dialogTitle="Introducí tu comentario anónimo"
+            android:key="Tu opinión es importante"
+            android:summary="Explicá tu amor, porque ni nosotros entendemos"
+            android:title="Danos tu feedback" />
+    </PreferenceCategory>
+</PreferenceScreen>

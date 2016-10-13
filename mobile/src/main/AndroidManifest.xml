@@ -19,12 +19,20 @@
         <activity android:name=".Menu" />
         <activity
             android:name=".ABM"
-            android:parentActivityName="com.example.fmgordillo.clases.Menu">
+            android:parentActivityName=".Menu">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.fmgordillo.clases.Menu" />
         </activity>
         <activity android:name=".AboutMe" />
+        <activity
+            android:name=".Settings"
+            android:label="@string/app_name"
+            android:parentActivityName=".Menu">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.fmgordillo.clases.Menu" />
+        </activity>
     </application>
 
 </manifest>

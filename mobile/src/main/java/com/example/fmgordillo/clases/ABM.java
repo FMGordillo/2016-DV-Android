@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.fmgordillo.clases.resources.ABM_DB;
 import com.example.fmgordillo.clases.resources.DBErrors;
 
 public class ABM extends Activity {

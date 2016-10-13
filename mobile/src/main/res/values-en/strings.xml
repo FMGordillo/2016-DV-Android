@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FMGordillo</string>
+    <string name="back">Back</string>
+    <string name="login_btn_accept">Login</string>
+    <string name="login_field_pw">Password</string>
+    <string name="login_field_user">Username</string>
+    <string name="menu_changeColor_btn">Change Color</string>
+    <string name="menu_changeColorDefault">Reset</string>
+    <string name="menu_sharedPreferences_btn">Shared Preferences</string>
+    <string name="onDelete">successfully deleted</string>
+    <string name="onInsert">successfully inserted</string>
+    <string name="onUpdate">successfully updated</string>
+    <string name="splash_txt_1">Welcome to my app</string>
+    <string name="tabs_1_color_btn_changecolor">Click me and background changes</string>
+    <string name="tabs_2_abm_code">Code</string>
+    <string name="tabs_2_abm_delete_btn">Delete</string>
+    <string name="tabs_2_abm_insert_btn">Insert</string>
+    <string name="tabs_2_abm_insert_details">Insert user\'s code (and name) and click a button</string>
+    <string name="tabs_2_abm_notification_ERR">ERROR:</string>
+    <string name="tabs_2_abm_rowsHint">Empty Rows</string>
+    <string name="tabs_2_abm_notification_OK">The row has been</string>
+    <string name="tabs_2_abm_update_btn">Update</string>
+    <string name="tabs_2_abm_username">Name</string>
+</resources>

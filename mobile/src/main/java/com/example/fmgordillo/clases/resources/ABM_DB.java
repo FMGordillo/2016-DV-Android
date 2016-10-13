@@ -1,16 +1,16 @@
-package com.example.fmgordillo.clases;
+package com.example.fmgordillo.clases.resources;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
-class ABM_DB extends SQLiteOpenHelper {
+public class ABM_DB extends SQLiteOpenHelper {
 
     private String sqlCreate = "CREATE TABLE Usuarios (codigo INTEGER NOT NULL, nombre TEXT)";
     private String sqlDelete = "DROP TABLE IF EXISTS Usuarios";
 
-    ABM_DB(Context contexto, String nombre,
-           SQLiteDatabase.CursorFactory factory, int version) {
+    public ABM_DB(Context contexto, String nombre,
+                  SQLiteDatabase.CursorFactory factory, int version) {
         super(contexto, nombre, factory, version);
     }
 

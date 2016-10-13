@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Clases</string>
+    <string name="app_name">FMGordillo</string>
     <string name="back">Volver</string>
     <!-- SPLASH SCREEN -->
     <string name="splash_txt_1">Bienvenidos a mi app</string>
@@ -9,6 +9,7 @@
     <string name="login_field_pw">Contraseña</string>
     <!-- MENU - TAB 1 -->
     <string name="menu_changeColor_btn">Cambiar color</string>
+    <string name="menu_sharedPreferences_btn">Preferencias compartidas</string>
     <!-- TAB 1 -->
     <string name="tabs_1_color_btn_changecolor">Haceme clic y cambio el fondo</string>
     <string name="menu_changeColorDefault">Reset</string>
@@ -25,6 +26,6 @@
     <string name="onUpdate">actualizado exitosamente</string>
     <string name="onDelete">eliminado exitosamente</string>
     <string name="tabs_2_abm_rowsHint">Datos vacios</string>
-
-
+    <!-- TAB 3 -->
+    <string name="menu_changeSettings_btn">Configuracion</string>
 </resources>
